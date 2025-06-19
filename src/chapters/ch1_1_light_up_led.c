@@ -1,14 +1,16 @@
 /****************************************************************************/ /**
- * @file   main.c
- * @brief  STC89C52RC main programming
+ * @file   ch1_1_light_up_led.c
+ * @brief  点亮一颗 LED
  * 
  * @author Maverick Pi
- * @date   2025-06-19 11:21:43
+ * @date   2025-06-19 12:53:05
  ********************************************************************************/
 
 #include "ch1_1_light_up_led.h"
 
-void main(void)
+void LightUpLED(void)
 {
-    LightUpLED();
+    P2 = 0xEF;
+
+    while (1);
 }
