@@ -14,4 +14,3 @@
 void FlashLED(void);
 
 #endif // !__CH1_2_LED_FLASHING_H__
-

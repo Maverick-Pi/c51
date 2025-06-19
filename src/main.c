@@ -7,9 +7,11 @@
  ********************************************************************************/
 
 // #include "ch1_1_light_up_led.h"
-#include "ch1_2_led_flashing.h"
+// #include "ch1_2_led_flashing.h"
+#include "ch1_3_sequential_led_light.h"
 
 void main(void)
 {
-    FlashLED();
+    // FlashLED();
+    SequentialLightLED();
 }
