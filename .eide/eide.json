@@ -31,7 +31,7 @@
       "custom_dep": {
         "name": "default",
         "incList": [
-          "../../../Keil_v5/C51/INC/Atmel",
+          "C:/Keil_v5/C51/INC/Atmel",
           "src/modules",
           "src/chapters"
         ],
