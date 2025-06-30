@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch4_1_matrix_key_test.h"
+#include "ch5_1_uart_to_pc.h"
 
 void main(void)
 {
-    MatrixKey_Test();
+    Uart_To_PC();
 }
