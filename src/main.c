@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch5_1_uart_to_pc.h"
+#include "ch5_2_uart_from_pc.h"
 
 void main(void)
 {
-    Uart_To_PC();
+    PC_Ctrl_LED();
 }
