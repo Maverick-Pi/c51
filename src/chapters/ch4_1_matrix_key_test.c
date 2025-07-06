@@ -25,15 +25,17 @@ void MatrixKey_Test(void)
     }
 }
 
+/*
 void Timer0_Routine(void) interrupt 1
 {
     static u8 counter = 0;
-
+    
     TH0 = Timer0_High;
     TL0 = Timer0_Low;
-
+    
     if (++counter > 20) {
         counter = 0;
         MatrixKey_State();
     }
 }
+*/
