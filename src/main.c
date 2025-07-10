@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch6_1_lattice_screen.h"
+#include "ch7_2_adjustable_clock.h"
 
 void main(void)
 {
-    LatticeScreen_Test();
+    AdjustableClock();
 }

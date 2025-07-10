@@ -35,6 +35,7 @@ void LatticeScreen_Test(void)
     }
 }
 
+/*
 void Timer0_Routine(void) interrupt 1
 {
     static u16 T0_Counter = 0;
@@ -48,3 +49,4 @@ void Timer0_Routine(void) interrupt 1
         Offset %= 72;
     }
 }
+*/
