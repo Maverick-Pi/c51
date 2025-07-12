@@ -13,7 +13,7 @@ void MatrixKey_Test(void)
     u8 key = KEY_NO_PRESS;
 
     LCD_Init();
-    Timer0_Init();
+    Timer0_Init(Timer0_Low, Timer0_High);
 
     LCD_ShowString(1, 1, "Hello Matrix Key");
 

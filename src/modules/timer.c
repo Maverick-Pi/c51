@@ -9,15 +9,17 @@
 #include "timer.h"
 
 /**
- * @brief Timer0 初始化, 1毫秒@11.0592MHz
+ * @brief Inits Timer0 @11.0592MHz
  * 
+ * @param T0_L Timer0 Low byte initial value
+ * @param T0_H Timer0 High byte initial value
  */
-void Timer0_Init(void)
+void Timer0_Init(u8 T0_L, u8 T0_H)
 {
 	TMOD &= 0xF0;			//设置定时器模式
 	TMOD |= 0x01;			//设置定时器模式
-	TL0 = Timer0_Low;		//设置定时初始值
-	TH0 = Timer0_High;		//设置定时初始值
+	TL0 = T0_L;				//设置定时初始值
+	TH0 = T0_H;				//设置定时初始值
 	TF0 = 0;				//清除TF0标志
 	TR0 = 1;				//定时器0开始计时
     ET0 = 1;
