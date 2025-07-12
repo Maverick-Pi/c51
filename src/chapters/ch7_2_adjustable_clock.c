@@ -169,7 +169,7 @@ void SetDateTime(void)
  */
 void AdjustableClock(void)
 {
-    Timer0_Init();
+    Timer0_Init(Timer0_Low, Timer0_High);
     LCD_Init();
     DS1302_Init();
 
@@ -197,21 +197,21 @@ void AdjustableClock(void)
     }
 }
 
-void Timer0_Routine(void) interrupt 1
-{
-    static u16 T0_Counter, T0_Flash_Counter;
-    TH0 = Timer0_High;
-    TL0 = Timer0_Low;
-    T0_Counter++;
-    T0_Flash_Counter++;
+// void Timer0_Routine(void) interrupt 1
+// {
+//     static u16 T0_Counter, T0_Flash_Counter;
+//     TH0 = Timer0_High;
+//     TL0 = Timer0_Low;
+//     T0_Counter++;
+//     T0_Flash_Counter++;
 
-    if (T0_Counter >= 20) {
-        T0_Counter = 0;
-        Key_Loop();
-    }
+//     if (T0_Counter >= 20) {
+//         T0_Counter = 0;
+//         Key_Loop();
+//     }
 
-    if (T0_Flash_Counter >= 400) {
-        T0_Flash_Counter = 0;
-        FlashFlag = !FlashFlag;
-    }
-}
+//     if (T0_Flash_Counter >= 400) {
+//         T0_Flash_Counter = 0;
+//         FlashFlag = !FlashFlag;
+//     }
+// }

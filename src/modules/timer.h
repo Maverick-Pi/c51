@@ -10,10 +10,17 @@
 #define __TIMER_H__
 
 #include <REGX52.H>
+#include "common_type.h"
 
-#define Timer0_Low  0x66
-#define Timer0_High 0xFC
+#define Timer0_Low          0x66    // 1ms
+#define Timer0_High         0xFC    // 1ms
 
-void Timer0_Init(void);
+#define Timer0_Low_100us    0xA4    // 100us
+#define Timer0_High_100us   0xFF    // 100us
+
+#define Timer0_Low_500us    0x33    // 500us
+#define Timer0_High_500us   0xFE    // 500us
+
+void Timer0_Init(u8 T0_L, u8 T0_H);
 
 #endif // !__TIMER_H__

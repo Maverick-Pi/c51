@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch7_2_adjustable_clock.h"
+#include "ch8_1_buzzer_alert_tone.h"
 
 void main(void)
 {
-    AdjustableClock();
+    BuzzerAlertTone();
 }
