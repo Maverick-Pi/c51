@@ -26,17 +26,17 @@ void BuzzerAlertTone(void)
     }
 }
 
-void Timer0_Routine(void) interrupt 1
-{
-    static u16 IndependentKeyCounter;
-    TL0 = Timer0_Low_100us;
-    TH0 = Timer0_High_100us;
-    IndependentKeyCounter++;
+// void Timer0_Routine(void) interrupt 1
+// {
+//     static u16 IndependentKeyCounter;
+//     TL0 = Timer0_Low_100us;
+//     TH0 = Timer0_High_100us;
+//     IndependentKeyCounter++;
 
-    if (IndependentKeyCounter >= 200) {
-        IndependentKeyCounter = 0;
-        Key_Loop();
-    }
+//     if (IndependentKeyCounter >= 200) {
+//         IndependentKeyCounter = 0;
+//         Key_Loop();
+//     }
 
-    Buzzer_AlertTone(2);
-}
+//     Buzzer_AlertTone(2);
+// }
