@@ -1,6 +1,6 @@
 /****************************************************************************/ /**
- * @file   ch9_1_data_storage.h
- * @brief  AT24C02 Data Storage
+ * @file   ch9_1_at24c02_test.h
+ * @brief  AT24C02 Test
  * 
  * @author Maverick Pi
  * @date   2025-07-13 17:54:53
@@ -14,4 +14,4 @@
 
 void AT24C02_Test(void);
 
-#endif // !__CH9_1_DATA_STORAGE_H__
+#endif // !__CH9_1_AT24C02_TEST_H__
