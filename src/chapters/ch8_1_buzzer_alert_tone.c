@@ -22,20 +22,26 @@ void BuzzerAlertTone(void)
             Buzzer_Duration = 1000;
             displayValue = IKeyNum;
         }
-        NixieTube(1, displayValue);
+        NixieTube_SetBuf(1, displayValue);
     }
 }
 
 // void Timer0_Routine(void) interrupt 1
 // {
-//     static u16 IndependentKeyCounter;
+//     static u16 IKey_Counter, NixieTube_Counter;
 //     TL0 = Timer0_Low_100us;
 //     TH0 = Timer0_High_100us;
-//     IndependentKeyCounter++;
+//     IKey_Counter++;
+//     NixieTube_Counter++;
 
-//     if (IndependentKeyCounter >= 200) {
-//         IndependentKeyCounter = 0;
+//     if (IKey_Counter >= 200) {
+//         IKey_Counter = 0;
 //         Key_Loop();
+//     }
+
+//     if (NixieTube_Counter >= 5) {
+//         NixieTube_Counter = 0;
+//         NixieTube_Loop();
 //     }
 
 //     Buzzer_AlertTone(2);

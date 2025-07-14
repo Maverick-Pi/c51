@@ -1,6 +1,6 @@
 /****************************************************************************/ /**
  * @file   nixie_tube.h
- * @brief  数码管模块
+ * @brief  Nixie Tube Module
  * 
  * @author Maverick Pi
  * @date   2025-06-19 22:01:10
@@ -13,8 +13,7 @@
 #include "common_type.h"
 #include "delay.h"
 
-u8 NixieTable[];
-
-void NixieTube(u8 location, u8 number);
+void NixieTube_Loop(void);
+void NixieTube_SetBuf(u8 location, u8 number);
 
 #endif // !__NIXIE_TUBE_H__

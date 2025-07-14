@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch9_2_data_storage.h"
+#include "ch9_3_chronograph.h"
 
 void main(void)
 {
-    Data_Storage();
+    Chronograph();
 }
