@@ -10,6 +10,7 @@
 #define __CH2_1_NIXIE_H__
 
 #include "nixie_tube.h"
+#include "timer.h"
 
 void NixieTest(void);
 

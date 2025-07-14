@@ -48,21 +48,21 @@ void Data_Storage(void)
     }
 }
 
-void Timer0_Routine(void) interrupt 1
-{
-    static u16 IKey_Counter, ClearLCD_Counter;
-    TL0 = Timer0_Low;
-    TH0 = Timer0_High;
-    IKey_Counter++;
+// void Timer0_Routine(void) interrupt 1
+// {
+//     static u16 IKey_Counter, ClearLCD_Counter;
+//     TL0 = Timer0_Low;
+//     TH0 = Timer0_High;
+//     IKey_Counter++;
 
-    if (IKey_Counter >= 20) {
-        IKey_Counter = 0;
-        Key_Loop();
-    }
+//     if (IKey_Counter >= 20) {
+//         IKey_Counter = 0;
+//         Key_Loop();
+//     }
 
-    if (ClearLCD_Flag) ClearLCD_Counter++;
-    if (ClearLCD_Counter >= 2000) {
-        ClearLCD_Counter = 0;
-        ClearLCD_Flag = 0;
-    }
-}
+//     if (ClearLCD_Flag) ClearLCD_Counter++;
+//     if (ClearLCD_Counter >= 2000) {
+//         ClearLCD_Counter = 0;
+//         ClearLCD_Flag = 0;
+//     }
+// }
