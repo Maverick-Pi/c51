@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch8_1_buzzer_alert_tone.h"
+#include "ch9_3_chronograph.h"
 
 void main(void)
 {
-    BuzzerAlertTone();
+    Chronograph();
 }
