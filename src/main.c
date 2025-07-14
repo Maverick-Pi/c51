@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch9_1_at24c02_test.h"
+#include "ch9_2_data_storage.h"
 
 void main(void)
 {
-    AT24C02_Test();
+    Data_Storage();
 }
