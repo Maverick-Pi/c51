@@ -9,6 +9,12 @@
 #include "delay.h"
 
 /**
+ * @brief Delay 5 us @11.0592MHz
+ * 
+ */
+void Delay5us(void) {}
+
+/**
  * @brief 延时 multi*10us @11.0592MHz
  * 
  * @param multi 10微妙级数
