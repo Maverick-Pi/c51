@@ -11,6 +11,7 @@
 #include <INTRINS.H>
 #include "common_type.h"
 
+void Delay5us(void);
 void Delay10us(u16 multi);
 void Delay_ms(u16 multi);
 
