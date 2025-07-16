@@ -69,29 +69,29 @@ void Chronograph_Loop(void)
     }
 }
 
-void Timer0_Routine(void) interrupt 1
-{
-    static u16 IKey_Counter, NixieTube_Counter, Chronograph_Counter;
+// void Timer0_Routine(void) interrupt 1
+// {
+//     static u16 IKey_Counter, NixieTube_Counter, Chronograph_Counter;
 
-    TL0 = Timer0_Low;
-    TH0 = Timer0_High;
+//     TL0 = Timer0_Low;
+//     TH0 = Timer0_High;
 
-    IKey_Counter++;
-    NixieTube_Counter++;
-    Chronograph_Counter++;
+//     IKey_Counter++;
+//     NixieTube_Counter++;
+//     Chronograph_Counter++;
 
-    if (IKey_Counter >= 20) {
-        IKey_Counter = 0;
-        Key_Loop();
-    }
+//     if (IKey_Counter >= 20) {
+//         IKey_Counter = 0;
+//         Key_Loop();
+//     }
 
-    if (NixieTube_Counter >= 1) {
-        NixieTube_Counter = 0;
-        NixieTube_Loop();
-    }
+//     if (NixieTube_Counter >= 1) {
+//         NixieTube_Counter = 0;
+//         NixieTube_Loop();
+//     }
 
-    if (Chronograph_Counter >= 10) {
-        Chronograph_Counter = 0;
-        Chronograph_Loop();
-    }
-}
+//     if (Chronograph_Counter >= 10) {
+//         Chronograph_Counter = 0;
+//         Chronograph_Loop();
+//     }
+// }

@@ -19,7 +19,8 @@
 #define DS18b20_RECALL_EE           0xB8
 #define DS18b20_READ_POWER_SUPPLY   0xB4
 
-void DS18B20_ConvertT(void);
 float DS18B20_ReadT(void);
+void DS18b20_ReadAlarm(char* LowTT, char* HighTT);
+void DS18B20_SetAlarm(char LowTT, char HighTT);
 
 #endif // !__DS18B20_H__

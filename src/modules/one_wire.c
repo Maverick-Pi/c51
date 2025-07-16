@@ -17,6 +17,8 @@ bit OneWire_Init(void)
 {
     bit ACK_Bit;    // Variable for receiving response
 
+    EA = 0;     // Disable timer interrupts to prevent timing interference and ensure program atomicity
+
     // Reset pulse
     DQ_OneWire = 1;
     DQ_OneWire = 0;
@@ -28,6 +30,8 @@ bit OneWire_Init(void)
     ACK_Bit = DQ_OneWire;   // Slave responds with 0 if present, otherwise 1
     Delay10us(48);
 
+    EA = 1;     // Enable timer to restore normal operation of other functions
+
     return ACK_Bit;
 }
 
@@ -38,11 +42,15 @@ bit OneWire_Init(void)
  */
 void OneWire_WriteBit(bit b)
 {
+    EA = 0;     // Disable timer interrupts to prevent timing interference and ensure program atomicity
+
     DQ_OneWire = 0;
     Delay5us();
     DQ_OneWire = b;
     Delay10us(6);
     DQ_OneWire = 1;
+
+    EA = 1;     // Enable timer to restore normal operation of other functions
 }
 
 /**
@@ -54,6 +62,8 @@ bit OneWire_ReadBit(void)
 {
     bit receivedBit;
 
+    EA = 0;     // Disable timer interrupts to prevent timing interference and ensure program atomicity
+
     DQ_OneWire = 0;
     Delay5us();
     DQ_OneWire = 1;
@@ -61,6 +71,8 @@ bit OneWire_ReadBit(void)
     
     receivedBit = DQ_OneWire;
     Delay10us(5);
+
+    EA = 1;     // Enable timer to restore normal operation of other functions
 
     return receivedBit;
 }

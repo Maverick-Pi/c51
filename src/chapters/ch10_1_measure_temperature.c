@@ -12,14 +12,12 @@ volatile float T;
 
 void MeasureTemperature(void)
 {
-    DS18B20_ConvertT();
-    Delay_ms(800);
+    DS18B20_ReadT();
 
     LCD_Init();
     LCD_ShowString(1, 1, "Temperature:");
     
     while (1) {
-        DS18B20_ConvertT();
         T = DS18B20_ReadT();
         
         if (T < 0) {

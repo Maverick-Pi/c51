@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch10_1_measure_temperature.h"
+#include "ch10_2_temperature_alarm.h"
 
 void main(void)
 {
-    MeasureTemperature();
+    TemperatureAlarm();
 }
