@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch10_2_temperature_alarm.h"
+#include "ch11_2_dc_motor_control.h"
 
 void main(void)
 {
-    TemperatureAlarm();
+    DC_Motor_Control();
 }
