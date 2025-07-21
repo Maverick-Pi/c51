@@ -42,32 +42,32 @@ void DC_Motor_Control(void)
     }
 }
 
-void Timer0_Routine(void) interrupt 1
-{
-    static u16 IKey_Counter, Nixie_Counter;
+// void Timer0_Routine(void) interrupt 1
+// {
+//     static u16 IKey_Counter, Nixie_Counter;
 
-    TL0 = Timer0_Low_100us;
-    TH0 = Timer0_High_100us;
+//     TL0 = Timer0_Low_100us;
+//     TH0 = Timer0_High_100us;
 
-    IKey_Counter++;
-    Nixie_Counter++;
+//     IKey_Counter++;
+//     Nixie_Counter++;
     
-    if (Nixie_Counter >= 5) {
-        Nixie_Counter = 0;
-        NixieTube_Loop();
-    }
+//     if (Nixie_Counter >= 5) {
+//         Nixie_Counter = 0;
+//         NixieTube_Loop();
+//     }
 
-    if (IKey_Counter >= 200) {
-        IKey_Counter = 0;
-        Key_Loop();
-    }
+//     if (IKey_Counter >= 200) {
+//         IKey_Counter = 0;
+//         Key_Loop();
+//     }
 
-    PWM_Counter++;
-    PWM_Counter %= PWM_PERIOD;
+//     PWM_Counter++;
+//     PWM_Counter %= PWM_PERIOD;
     
-    if (PWM_Counter < DutyCycle) {
-        Motor = 1;
-    } else {
-        Motor = 0;
-    }
-}
+//     if (PWM_Counter < DutyCycle) {
+//         Motor = 1;
+//     } else {
+//         Motor = 0;
+//     }
+// }

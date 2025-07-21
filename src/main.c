@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch11_2_dc_motor_control.h"
+#include "ch12_1_analog_digital.h"
 
 void main(void)
 {
-    DC_Motor_Control();
+    AD_Convert();
 }
