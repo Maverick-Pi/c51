@@ -17,7 +17,7 @@ void Data_Storage(void)
     u16 num = AT24C02_Random_ByteRead(SLAVE_ADDR, 0x20) + 
             AT24C02_Random_ByteRead(SLAVE_ADDR, 0x21) * 256;;
 
-    Timer0_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
     LCD_Init();
 
     LCD_ShowNum(1, 1, num, 5);

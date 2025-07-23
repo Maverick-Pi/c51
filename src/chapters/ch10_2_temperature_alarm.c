@@ -268,7 +268,7 @@ void TemperatureAlarm(void)
     DS18b20_ReadAlarm(&TL, &TH);
     Delay_ms(750);
 
-    Timer0_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
     LCD_Init();
     DisplayInit(TL, TH);
 

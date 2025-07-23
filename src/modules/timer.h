@@ -21,6 +21,10 @@
 #define Timer0_Low_500us    0x33    // 500us
 #define Timer0_High_500us   0xFE    // 500us
 
+void Timer0_Interrupt_Init(u8 T0_L, u8 T0_H);
 void Timer0_Init(u8 T0_L, u8 T0_H);
+void Timer0_SetCounter(u16 value);
+u16 Timer0_GetCounter(void);
+void Timer0_Run(u8 flag);
 
 #endif // !__TIMER_H__

@@ -13,7 +13,7 @@ static u8 IKeyNum = 0;
 void BuzzerAlertTone(void)
 {
     u8 displayValue = 0;
-    Timer0_Init(Timer0_Low_100us, Timer0_High_100us);
+    Timer0_Interrupt_Init(Timer0_Low_100us, Timer0_High_100us);
 
     while (1)
     {

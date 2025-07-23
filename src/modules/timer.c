@@ -9,20 +9,48 @@
 #include "timer.h"
 
 /**
- * @brief Inits Timer0 @11.0592MHz
+ * @brief Inits Timer0 Interrupt @11.0592MHz
  * 
  * @param T0_L Timer0 Low byte initial value
  * @param T0_H Timer0 High byte initial value
  */
+void Timer0_Interrupt_Init(u8 T0_L, u8 T0_H)
+{
+	// 16-bit Timer Mode
+	TMOD &= 0xF0;
+	TMOD |= 0x01;
+	TL0 = T0_L; 		// Timer Low 0
+	TH0 = T0_H;			// Timer High 0
+	TF0 = 0;			// Timer 0 Overflow Interrupt Flag
+	TR0 = 1;			// Timer 0 Run Enable
+    ET0 = 1; 			// Timer 0 Interrupt Enable
+    EA = 1; 			// Global Interrupt Enable
+    PT0 = 0; 			// Timer 0 Interrupt Priority
+}
+
 void Timer0_Init(u8 T0_L, u8 T0_H)
 {
-	TMOD &= 0xF0;			//设置定时器模式
-	TMOD |= 0x01;			//设置定时器模式
-	TL0 = T0_L;				//设置定时初始值
-	TH0 = T0_H;				//设置定时初始值
-	TF0 = 0;				//清除TF0标志
-	TR0 = 1;				//定时器0开始计时
-    ET0 = 1;
-    EA = 1;
-    PT0 = 0;
+	// 16-bit Timer Mode
+	TMOD &= 0xF0;
+	TMOD |= 0x01;
+	TL0 = T0_L; 	// Timer Low 0
+	TH0 = T0_H; 	// Timer High 0
+	TF0 = 0; 		// Timer 0 Overflow Interrupt Flag
+	TR0 = 0; 		// Timer 0 Run Disable
+}
+
+void Timer0_SetCounter(u16 value)
+{
+	TL0 = value % 256;
+	TH0 = value / 256;
+}
+
+u16 Timer0_GetCounter(void)
+{
+	return ((TH0 << 8) | TL0);
+}
+
+void Timer0_Run(u8 flag)
+{
+	TR0 = flag;
 }

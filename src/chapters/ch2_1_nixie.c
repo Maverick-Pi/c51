@@ -10,7 +10,7 @@
 
 void NixieTest(void)
 {
-    Timer0_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
 
     NixieTube_SetBuf(2, 5);
 
