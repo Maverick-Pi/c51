@@ -1,6 +1,6 @@
 /****************************************************************************/ /**
  * @file   ch13_2_ir_motor.c
- * @brief  
+ * @brief  IR Remote Control DC Motor
  * 
  * @author Maverick Pi
  * @date   2025-07-23 17:18:07
