@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch13_1_infrared_remote_control.h"
+#include "ch13_2_ir_motor.h"
 
 void main(void)
 {
-    Infrared_Remote_Control();
+    Remote_Control_Motor();
 }

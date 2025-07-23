@@ -15,7 +15,7 @@ void Chronograph(void)
 {
     u8 keyNum;
 
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
     
 
     while (1) {
@@ -73,8 +73,8 @@ void Chronograph_Loop(void)
 // {
 //     static u16 IKey_Counter, NixieTube_Counter, Chronograph_Counter;
 
-//     TL0 = Timer0_Low;
-//     TH0 = Timer0_High;
+//     TL0 = Timer_Low;
+//     TH0 = Timer_High;
 
 //     IKey_Counter++;
 //     NixieTube_Counter++;

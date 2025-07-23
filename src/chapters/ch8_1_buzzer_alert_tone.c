@@ -13,7 +13,7 @@ static u8 IKeyNum = 0;
 void BuzzerAlertTone(void)
 {
     u8 displayValue = 0;
-    Timer0_Interrupt_Init(Timer0_Low_100us, Timer0_High_100us);
+    Timer0_Interrupt_Init(Timer_Low_100us, Timer_High_100us);
 
     while (1)
     {
@@ -29,8 +29,8 @@ void BuzzerAlertTone(void)
 // void Timer0_Routine(void) interrupt 1
 // {
 //     static u16 IKey_Counter, NixieTube_Counter;
-//     TL0 = Timer0_Low_100us;
-//     TH0 = Timer0_High_100us;
+//     TL0 = Timer_Low_100us;
+//     TH0 = Timer_High_100us;
 //     IKey_Counter++;
 //     NixieTube_Counter++;
 

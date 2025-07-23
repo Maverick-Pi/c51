@@ -26,7 +26,7 @@ static u8 Offset;
 void LatticeScreen_Test(void)
 {
     u8 i;
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
 
     while (1) {
         for (i = 0; i < 8; ++i) {
@@ -39,8 +39,8 @@ void LatticeScreen_Test(void)
 void Timer0_Routine(void) interrupt 1
 {
     static u16 T0_Counter = 0;
-    TH0 = Timer0_High;
-    TL0 = Timer0_Low;
+    TH0 = Timer_High;
+    TL0 = Timer_Low;
     T0_Counter++;
 
     if (T0_Counter >= 100) {
