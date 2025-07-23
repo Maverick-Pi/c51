@@ -13,7 +13,7 @@ void MatrixKey_Test(void)
     u8 key = KEY_NO_PRESS;
 
     LCD_Init();
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
 
     LCD_ShowString(1, 1, "Hello Matrix Key");
 
@@ -30,8 +30,8 @@ void Timer0_Routine(void) interrupt 1
 {
     static u8 counter = 0;
     
-    TH0 = Timer0_High;
-    TL0 = Timer0_Low;
+    TH0 = Timer_High;
+    TL0 = Timer_Low;
     
     if (++counter > 20) {
         counter = 0;

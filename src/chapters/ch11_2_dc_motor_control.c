@@ -8,66 +8,50 @@
 
 #include "ch11_2_dc_motor_control.h"
 
-static u8 IKeyNum = 0, Speed = 0, DutyCycle = 0, PWM_Counter = 0;
-
 void DC_Motor_Control(void)
 {
-    Timer0_Interrupt_Init(Timer0_Low_100us, Timer0_High_100us);
+    u8 ikey_num = 0;
+    u8 motor_level = 0;
+    u8 total_level = 4;
+
+    Timer1_Interrupt_Init(Timer_Low_200us, Timer_High_200us);
     
-    NixieTube_SetBuf(1, Speed);
+    NixieTube_SetBuf(1, motor_level);
 
     while (1) {
-        IKeyNum = Independent_Key();
-        if (IKeyNum == 1) {
-            Speed--;
-
-            if (Speed >= 4) Speed = 3;
-            if (Speed == 0) DutyCycle = 0;
-            if (Speed == 1) DutyCycle = PWM_PERIOD / 3;
-            if (Speed == 2) DutyCycle = PWM_PERIOD * 2 / 3;
-            if (Speed == 3) DutyCycle = PWM_PERIOD;
-
-            NixieTube_SetBuf(1, Speed);
-        } else if (IKeyNum == 2) {
-            Speed++;
-            Speed %= 4;
-            
-            if (Speed == 0) DutyCycle = 0;
-            if (Speed == 1) DutyCycle = PWM_PERIOD / 3;
-            if (Speed == 2) DutyCycle = PWM_PERIOD * 2 / 3;
-            if (Speed == 3) DutyCycle = PWM_PERIOD;
-
-            NixieTube_SetBuf(1, Speed);
+        ikey_num = Independent_Key();
+        if (ikey_num == 1) {
+            if (--motor_level >= total_level) motor_level = total_level - 1;
+            Motor_SetSpeed(motor_level, total_level);
+            NixieTube_SetBuf(1, motor_level);
+        } else if (ikey_num == 2) {
+            motor_level++;
+            motor_level %= total_level;
+            Motor_SetSpeed(motor_level, total_level);
+            NixieTube_SetBuf(1, motor_level);
         }
     }
 }
 
-// void Timer0_Routine(void) interrupt 1
+// void Timer1_Routine(void) interrupt 3
 // {
 //     static u16 IKey_Counter, Nixie_Counter;
 
-//     TL0 = Timer0_Low_100us;
-//     TH0 = Timer0_High_100us;
+//     TL1 = Timer_Low_200us;
+//     TH1 = Timer_High_200us;
 
 //     IKey_Counter++;
 //     Nixie_Counter++;
     
-//     if (Nixie_Counter >= 5) {
+//     if (Nixie_Counter >= 2) {
 //         Nixie_Counter = 0;
 //         NixieTube_Loop();
 //     }
 
-//     if (IKey_Counter >= 200) {
+//     if (IKey_Counter >= 100) {
 //         IKey_Counter = 0;
 //         Key_Loop();
 //     }
 
-//     PWM_Counter++;
-//     PWM_Counter %= PWM_PERIOD;
-    
-//     if (PWM_Counter < DutyCycle) {
-//         Motor = 1;
-//     } else {
-//         Motor = 0;
-//     }
+//     Motor_DutyCycle_Loop();
 // }

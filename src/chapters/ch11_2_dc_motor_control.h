@@ -14,10 +14,7 @@
 #include "timer.h"
 #include "nixie_tube.h"
 #include "independent_key.h"
-
-#define PWM_PERIOD  100
-
-sbit Motor = P1^0;
+#include "motor.h"
 
 void DC_Motor_Control(void);
 

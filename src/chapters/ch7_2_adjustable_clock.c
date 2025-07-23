@@ -169,7 +169,7 @@ void SetDateTime(void)
  */
 void AdjustableClock(void)
 {
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
     LCD_Init();
     DS1302_Init();
 
@@ -200,8 +200,8 @@ void AdjustableClock(void)
 // void Timer0_Routine(void) interrupt 1
 // {
 //     static u16 T0_Counter, T0_Flash_Counter;
-//     TH0 = Timer0_High;
-//     TL0 = Timer0_Low;
+//     TH0 = Timer_High;
+//     TL0 = Timer_Low;
 //     T0_Counter++;
 //     T0_Flash_Counter++;
 

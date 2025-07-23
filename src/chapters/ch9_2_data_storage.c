@@ -17,7 +17,7 @@ void Data_Storage(void)
     u16 num = AT24C02_Random_ByteRead(SLAVE_ADDR, 0x20) + 
             AT24C02_Random_ByteRead(SLAVE_ADDR, 0x21) * 256;;
 
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
     LCD_Init();
 
     LCD_ShowNum(1, 1, num, 5);
@@ -51,8 +51,8 @@ void Data_Storage(void)
 // void Timer0_Routine(void) interrupt 1
 // {
 //     static u16 IKey_Counter, ClearLCD_Counter;
-//     TL0 = Timer0_Low;
-//     TH0 = Timer0_High;
+//     TL0 = Timer_Low;
+//     TH0 = Timer_High;
 //     IKey_Counter++;
 
 //     if (IKey_Counter >= 20) {

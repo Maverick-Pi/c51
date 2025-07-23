@@ -268,7 +268,7 @@ void TemperatureAlarm(void)
     DS18b20_ReadAlarm(&TL, &TH);
     Delay_ms(750);
 
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
     LCD_Init();
     DisplayInit(TL, TH);
 
@@ -308,8 +308,8 @@ void TemperatureAlarm(void)
 //     static u16 MKey_Counter, Flash_Counter;
 
 //     // Reload timer values
-//     TL0 = Timer0_Low;
-//     TH0 = Timer0_High;
+//     TL0 = Timer_Low;
+//     TH0 = Timer_High;
 
 //     // Increment counters
 //     MKey_Counter++;

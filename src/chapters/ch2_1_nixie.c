@@ -10,7 +10,7 @@
 
 void NixieTest(void)
 {
-    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer_Low, Timer_High);
 
     NixieTube_SetBuf(2, 5);
 
@@ -22,8 +22,8 @@ void NixieTest(void)
 // void Timer0_Routine(void) interrupt 1
 // {
 //     static u16 NixieTube_Counter;
-//     TL0 = Timer0_Low;
-//     TH0 = Timer0_High;
+//     TL0 = Timer_Low;
+//     TH0 = Timer_High;
 //     NixieTube_Counter++;
 
 //     if (NixieTube_Counter >= 1) {
