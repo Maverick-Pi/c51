@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch12_1_analog_digital.h"
+#include "ch13_1_infrared_remote_control.h"
 
 void main(void)
 {
-    AD_Convert();
+    Infrared_Remote_Control();
 }

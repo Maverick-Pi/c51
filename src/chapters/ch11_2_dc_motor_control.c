@@ -12,7 +12,7 @@ static u8 IKeyNum = 0, Speed = 0, DutyCycle = 0, PWM_Counter = 0;
 
 void DC_Motor_Control(void)
 {
-    Timer0_Init(Timer0_Low_100us, Timer0_High_100us);
+    Timer0_Interrupt_Init(Timer0_Low_100us, Timer0_High_100us);
     
     NixieTube_SetBuf(1, Speed);
 

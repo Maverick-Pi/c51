@@ -15,7 +15,7 @@ void Chronograph(void)
 {
     u8 keyNum;
 
-    Timer0_Init(Timer0_Low, Timer0_High);
+    Timer0_Interrupt_Init(Timer0_Low, Timer0_High);
     
 
     while (1) {
