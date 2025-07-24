@@ -12,7 +12,6 @@
 #include "ds18b20.h"
 #include "timer.h"
 #include "lcd1602.h"
-#include "buzzer.h"
 #include "matrix_key.h"
 
 void TemperatureAlarm(void);

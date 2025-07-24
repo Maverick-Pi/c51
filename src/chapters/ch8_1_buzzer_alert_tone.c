@@ -8,7 +8,7 @@
 
 #include "ch8_1_buzzer_alert_tone.h"
 
-static u8 IKeyNum = 0;
+static u8 xdata IKeyNum = 0;
 
 void BuzzerAlertTone(void)
 {

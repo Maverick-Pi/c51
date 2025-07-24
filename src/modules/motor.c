@@ -13,8 +13,8 @@
 
 #include "motor.h"
 
-static u16 DutyCycle = 0;       ///< Current duty cycle value (0-MOTOR_PWM_PERIOD)
-static u16 PWM_Counter = 0;     ///< PWM period counter (0 to MOTOR_PWM_PERIOD-1)
+static u16 xdata DutyCycle = 0;       ///< Current duty cycle value (0-MOTOR_PWM_PERIOD)
+static u16 xdata PWM_Counter = 0;     ///< PWM period counter (0 to MOTOR_PWM_PERIOD-1)
 
 /**
  * @brief Updates motor PWM state (must be called periodically)

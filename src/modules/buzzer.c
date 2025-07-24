@@ -8,8 +8,8 @@
 
 #include "buzzer.h"
 
-volatile u16 Buzzer_ToneCount = 0;  // Counter for controlling buzzer tone frequency
-volatile u16 Buzzer_Duration = 0;
+volatile u16 xdata Buzzer_ToneCount = 0;  // Counter for controlling buzzer tone frequency
+volatile u16 xdata Buzzer_Duration = 0;
 
 /**
  * @brief Buzzer tone function executed in timer interrupt

@@ -303,31 +303,31 @@ void TemperatureAlarm(void)
  *  - Keypad scanning (every 20ms)
  *  - Display flashing during setting mode (400ms interval)
  */
-// void Timer0_Routine(void) interrupt 1
-// {
-//     static u16 MKey_Counter, Flash_Counter;
+void Timer0_Routine(void) interrupt 1
+{
+    static u16 MKey_Counter, Flash_Counter;
 
-//     // Reload timer values
-//     TL0 = Timer_Low;
-//     TH0 = Timer_High;
+    // Reload timer values
+    TL0 = Timer_Low;
+    TH0 = Timer_High;
 
-//     // Increment counters
-//     MKey_Counter++;
-//     Flash_Counter++;
+    // Increment counters
+    MKey_Counter++;
+    Flash_Counter++;
 
-//     // Keypad scanning (20ms interval)
-//     if (MKey_Counter >= 20) {
-//         MKey_Counter = 0;
-//         MatrixKey_State();  // Update key states
-//     }
+    // Keypad scanning (20ms interval)
+    if (MKey_Counter >= 20) {
+        MKey_Counter = 0;
+        MatrixKey_State();  // Update key states
+    }
 
-//     // Threshold setting mode flashing
-//     if (SetFlag) {
-//         if (Flash_Counter >= 400) {     // 400ms flash interval
-//             SetFlash = !SetFlash;       // Toggle flash state
-//             Flash_Counter = 0;
-//         }
-//     } else {
-//         SetFlash = 0; // Disable flash if not set mode
-//     }
-// }
+    // Threshold setting mode flashing
+    if (SetFlag) {
+        if (Flash_Counter >= 400) {     // 400ms flash interval
+            SetFlash = !SetFlash;       // Toggle flash state
+            Flash_Counter = 0;
+        }
+    } else {
+        SetFlash = 0; // Disable flash if not set mode
+    }
+}

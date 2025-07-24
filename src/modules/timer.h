@@ -21,8 +21,6 @@
 #define Timer_Low_200us     0x48    // 200us
 #define Timer_High_200us    0xFF    // 200us
 
-<<<<<<< HEAD
-=======
 #define Timer_Low_300us     0xEC    // 300us
 #define Timer_High300us     0xFE    // 300us
 
@@ -32,16 +30,12 @@
 #define Timer_Low_500us     0x33    // 500us
 #define Timer_High_500us    0xFE    // 500us
 
->>>>>>> feature
 void Timer0_Interrupt_Init(u8 T0_L, u8 T0_H);
 void Timer0_Init(u8 T0_L, u8 T0_H);
 void Timer0_SetCounter(u16 value);
 u16 Timer0_GetCounter(void);
 void Timer0_Run(u8 flag);
-<<<<<<< HEAD
-=======
 
 void Timer1_Interrupt_Init(u8 T1_L, u8 T1_H);
->>>>>>> feature
 
 #endif // !__TIMER_H__

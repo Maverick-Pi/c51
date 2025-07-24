@@ -14,7 +14,7 @@
 
 sbit Buzzer = P2^5;
 
-extern volatile u16 Buzzer_Duration;    // Duration for one beep of the buzzer
+extern volatile u16 xdata Buzzer_Duration;    // Duration for one beep of the buzzer
 
 void Buzzer_AlertTone(u8 tone_count);
 

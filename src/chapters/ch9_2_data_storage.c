@@ -9,7 +9,7 @@
 
 #include "ch9_2_data_storage.h"
 
-u8 ClearLCD_Flag = 0;
+u8 xdata ClearLCD_Flag = 0;
 
 void Data_Storage(void)
 {

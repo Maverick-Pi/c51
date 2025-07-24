@@ -21,7 +21,7 @@ u8 code FlowingSubtitles[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-static u8 Offset;
+static u8 xdata Offset;
 
 void LatticeScreen_Test(void)
 {

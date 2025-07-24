@@ -53,8 +53,6 @@ u16 Timer0_GetCounter(void)
 void Timer0_Run(u8 flag)
 {
 	TR0 = flag;
-<<<<<<< HEAD
-=======
 }
 
 /**
@@ -75,5 +73,4 @@ void Timer1_Interrupt_Init(u8 T1_L, u8 T1_H)
 	ET1 = 1; 		// Timer 1 Interrupt Enable
 	EA = 1; 		// Global Interrupt Enable
 	PT1 = 0; 		// Timer 1 Interrupt Priority
->>>>>>> feature
 }
