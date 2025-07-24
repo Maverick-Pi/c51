@@ -6,9 +6,9 @@
  * @date   2025-06-19 11:21:43
  ********************************************************************************/
 
-#include "ch13_2_ir_motor.h"
+#include "ch10_2_temperature_alarm.h"
 
 void main(void)
 {
-    Remote_Control_Motor();
+    TemperatureAlarm();
 }
